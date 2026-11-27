@@ -6,46 +6,91 @@
 <title>Oficina Musical | Aulas completas para todos os instrumentos</title>
 <meta name="description" content="Apostilas e aulas completas de violão, piano, canto, bateria e mais 17 instrumentos. Veja uma prévia de cada material e escolha o seu.">
 <style>
-:root{--roxo:#3b1d8f;--roxo2:#7c3aed;--amar:#fbbf24;--fundo:#faf7f0;--texto:#1b1340;--mudo:#5b5675}
+:root{--roxo:#3b1d8f;--roxo2:#7c3aed;--amar:#fbbf24;--fundo:#faf7f0;--texto:#1b1340;--mudo:#5b5675;--verde:#059669}
 *{box-sizing:border-box;margin:0}
 body{font-family:Segoe UI,system-ui,Arial,sans-serif;background:var(--fundo);color:var(--texto);line-height:1.5}
-.topo{background:linear-gradient(135deg,var(--roxo),var(--roxo2));color:#fff;text-align:center;padding:48px 20px 32px}
-.topo .logo{font-weight:800;letter-spacing:.5px;opacity:.95}
-.topo h1{font-size:clamp(28px,5vw,46px);line-height:1.15;margin:14px auto 10px;max-width:760px}
-.topo p{max-width:620px;margin:0 auto;opacity:.92;font-size:18px}
-.btn{display:inline-block;background:var(--amar);color:#1b1340;font-weight:700;text-decoration:none;border-radius:999px;padding:11px 22px;font-size:15px;border:0;cursor:pointer;white-space:nowrap}
-.btn:hover{filter:brightness(1.05)}
-.btn.sec{background:#fff;color:var(--roxo)}
-.topo .btn{margin-top:22px;font-size:17px;padding:14px 28px}
-/* carrossel */
-.faixa{background:#2a1470;padding:14px 0;overflow:hidden;position:relative}
+
+/* TOPO */
+.topo{background:linear-gradient(135deg,#2a0d6e,var(--roxo),var(--roxo2));color:#fff;text-align:center;padding:56px 20px 44px;position:relative;overflow:hidden}
+.topo::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.topo .logo{font-weight:800;letter-spacing:.5px;opacity:.9;font-size:14px;text-transform:uppercase;margin-bottom:16px}
+.topo h1{font-size:clamp(28px,5vw,50px);line-height:1.1;margin:0 auto 14px;max-width:760px;font-weight:800}
+.topo p{max-width:580px;margin:0 auto 8px;opacity:.9;font-size:18px}
+.destaque-preco{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:8px 20px;margin:18px auto 0;font-size:16px}
+.destaque-preco s{opacity:.7}.destaque-preco strong{color:var(--amar);font-size:22px}
+.btn-hero{display:inline-block;background:var(--amar);color:#1b1340;font-weight:800;text-decoration:none;border-radius:999px;padding:16px 36px;font-size:18px;margin-top:28px;border:0;cursor:pointer;transition:.15s;box-shadow:0 4px 20px rgba(251,191,36,.4)}
+.btn-hero:hover{filter:brightness(1.07);transform:translateY(-1px)}
+
+/* FAIXA */
+.faixa{background:#2a1470;padding:14px 0;overflow:hidden}
 .trilho{display:flex;gap:12px;width:max-content;animation:rola 60s linear infinite}
 .faixa:hover .trilho{animation-play-state:paused}
 @keyframes rola{to{transform:translateX(-50%)}}
 .chip{display:flex;align-items:center;gap:10px;background:#fff;border-radius:999px;padding:6px 6px 6px 16px;box-shadow:0 2px 8px #0003}
 .chip b{font-size:15px}.chip small{color:var(--mudo);font-size:12px}
-.chip .btn{padding:7px 14px;font-size:13px}
-@media (prefers-reduced-motion:reduce){.trilho{animation:none;overflow-x:auto;width:auto}}
-main{max-width:1060px;margin:0 auto;padding:40px 16px}
-h2{font-size:28px;margin-bottom:6px}
-.sub{color:var(--mudo);margin-bottom:24px}
-.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
-.card{background:#fff;border-radius:16px;padding:16px;box-shadow:0 2px 12px #1b134014;display:flex;flex-direction:column;gap:12px}
-.card h3{font-size:20px}.card .meta{color:var(--mudo);font-size:14px}
-.thumbs{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
-.thumbs img{height:200px;flex:0 0 auto;scroll-snap-align:start;border-radius:6px;border:1px solid #e6e1f3;cursor:zoom-in;background:#fff}
-.sem{background:#f1ecfb;border-radius:10px;padding:18px;text-align:center;color:var(--mudo);font-size:14px}
-.card .btn{text-align:center;margin-top:auto}
-.inclui{background:#fff;border-radius:16px;padding:22px;margin-top:36px;box-shadow:0 2px 12px #1b134014}
-.inclui ul{list-style:none;padding:0;margin-top:10px;display:grid;gap:6px}
-details{background:#fff;border-radius:12px;padding:14px 16px;margin-bottom:8px}
-summary{cursor:pointer;font-weight:600}
-details p{margin-top:8px;color:var(--mudo)}
-footer{text-align:center;color:var(--mudo);font-size:13px;padding:30px 16px 50px}
+.chip .btn-sm{padding:7px 14px;font-size:13px;background:var(--amar);color:#1b1340;font-weight:700;text-decoration:none;border-radius:999px;white-space:nowrap}
+
+/* MAIN */
+main{max-width:1100px;margin:0 auto;padding:48px 16px}
+.section-title{font-size:30px;font-weight:800;margin-bottom:6px}
+.section-sub{color:var(--mudo);margin-bottom:28px;font-size:16px}
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px}
+
+/* CARD */
+.card{background:#fff;border-radius:18px;padding:14px;box-shadow:0 2px 16px #1b134014;display:flex;flex-direction:column;gap:10px;transition:.2s;border:2px solid transparent}
+.card:hover{border-color:var(--roxo2);box-shadow:0 6px 24px #7c3aed22}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card h3{font-size:17px;font-weight:800;line-height:1.2}
+.card .meta{color:var(--mudo);font-size:13px;margin-top:2px}
+.badge-bonus{background:#f0fdf4;color:var(--verde);border:1px solid #bbf7d0;border-radius:999px;padding:3px 10px;font-size:12px;font-weight:600;white-space:nowrap}
+
+/* CARROSSEL */
+.carousel{position:relative;border-radius:12px;overflow:hidden;background:#f1ecfb;aspect-ratio:4/5;user-select:none}
+.carousel-track{display:flex;height:100%;transition:transform .3s ease}
+.carousel-track img{flex:0 0 100%;width:100%;height:100%;object-fit:contain;background:#f5f3ff;cursor:zoom-in}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(59,29,143,.75);color:#fff;border:none;border-radius:50%;width:34px;height:34px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2;transition:.15s;line-height:1}
+.carousel-btn:hover{background:var(--roxo2)}
+.carousel-btn.prev{left:8px}
+.carousel-btn.next{right:8px}
+.carousel-dots{position:absolute;bottom:8px;left:0;right:0;display:flex;justify-content:center;gap:5px}
+.carousel-dots span{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer;transition:.2s}
+.carousel-dots span.active{background:#fff;width:16px;border-radius:4px}
+.sem{background:#f1ecfb;border-radius:12px;padding:28px 18px;text-align:center;color:var(--mudo);font-size:14px;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center}
+
+/* PREÇO / BOTÃO */
+.preco-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border-radius:12px;padding:10px 14px;text-align:center}
+.preco-de{color:var(--mudo);font-size:13px}
+.preco-de s{font-size:16px}
+.preco-por{font-size:22px;font-weight:900;color:var(--roxo);line-height:1}
+.preco-por span{font-size:14px;font-weight:600;color:var(--mudo)}
+.btn-comprar{display:block;background:var(--amar);color:#1b1340;font-weight:800;text-decoration:none;border-radius:999px;padding:11px 20px;font-size:15px;text-align:center;margin-top:auto;transition:.15s}
+.btn-comprar:hover{filter:brightness(1.07)}
+
+/* INCLUI */
+.inclui{background:#fff;border-radius:20px;padding:28px 32px;margin-top:40px;box-shadow:0 2px 16px #1b134014}
+.inclui h2{font-size:22px;font-weight:800;margin-bottom:16px;color:var(--roxo)}
+.inclui-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.inclui-item{display:flex;align-items:flex-start;gap:12px;background:#faf7f0;border-radius:12px;padding:14px 16px;border-left:4px solid var(--roxo2)}
+.inclui-item .ico{font-size:26px;flex-shrink:0;line-height:1}
+.inclui-item p{font-size:14px;color:var(--texto);font-weight:500;line-height:1.4}
+.inclui-item p strong{display:block;font-size:15px;margin-bottom:3px;color:var(--roxo)}
+
+/* FAQ */
+.faq{margin-top:40px}
+.faq h2{font-size:24px;font-weight:800;margin-bottom:4px}
+details{background:#fff;border-radius:12px;padding:16px 20px;margin-bottom:10px;box-shadow:0 1px 6px #1b134010}
+summary{cursor:pointer;font-weight:700;font-size:15px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+summary::after{content:"▾";font-size:18px;color:var(--roxo2);transition:.2s}
+details[open] summary::after{transform:rotate(180deg)}
+details p{margin-top:10px;color:var(--mudo);font-size:14px;line-height:1.6}
+
+footer{text-align:center;color:var(--mudo);font-size:13px;padding:36px 16px 56px}
+
+/* ZOOM */
 #zoom{position:fixed;inset:0;background:#000c;display:none;align-items:center;justify-content:center;z-index:9;padding:16px}
-#zoom img{max-height:88vh;max-width:92vw;border-radius:8px;background:#fff}
-#zoom .nav{position:absolute;top:50%;background:#fff;border:0;border-radius:50%;width:44px;height:44px;font-size:22px;cursor:pointer}
-#zoom .ant{left:10px}#zoom .prox{right:10px}
+#zoom img{max-height:92vh;max-width:92vw;border-radius:8px;background:#fff}
+
+@media(max-width:600px){.inclui{padding:20px 16px}.inclui-grid{grid-template-columns:1fr}.carousel-btn{width:28px;height:28px;font-size:14px}}
 </style>
 </head>
 <body>
@@ -53,51 +98,134 @@ footer{text-align:center;color:var(--mudo);font-size:13px;padding:30px 16px 50px
   <div class="logo">🎵 OFICINA MUSICAL</div>
   <h1>Aulas e apostilas completas para o seu instrumento</h1>
   <p>Escolha o instrumento, veja uma prévia do material e compre direto, com acesso na hora.</p>
-  <a class="btn" href="#materiais">Ver todos os materiais</a>
+  <div class="destaque-preco">
+    <s>R$49,90</s>
+    <strong>R$14,90</strong>
+    <span>cada material</span>
+  </div>
+  <br>
+  <a class="btn-hero" href="#materiais">Ver todos os materiais ↓</a>
 </header>
 
 <div class="faixa" aria-label="Instrumentos disponíveis"><div class="trilho" id="trilho"></div></div>
 
 <main id="materiais">
-  <h2>Veja um pouco de cada material</h2>
-  <p class="sub">Páginas reais do miolo de cada apostila. Deslize para o lado e clique para ampliar.</p>
+  <h2 class="section-title">Veja um pouco de cada material</h2>
+  <p class="section-sub">Passe pelas páginas do material antes de comprar. Acesso imediato após a compra.</p>
   <div class="grade" id="grade"></div>
 
   <section class="inclui">
-    <h2 style="font-size:22px">O que vem em cada material</h2>
-    <ul>
-      <li>📘 Apostila do aluno, com as aulas em sequência e página de progresso</li>
-      <li>🎓 Aulas completas para estudar sozinho ou ensinar</li>
-      <li>🎁 Bônus e extras, conforme o instrumento</li>
-      <li>⚡ Acesso liberado logo após a compra</li>
-    </ul>
+    <h2>O que vem em cada material</h2>
+    <div class="inclui-grid">
+      <div class="inclui-item">
+        <div class="ico">📘</div>
+        <p><strong>Apostila do aluno</strong>Aulas em sequência com página de progresso para acompanhar cada etapa</p>
+      </div>
+      <div class="inclui-item">
+        <div class="ico">📗</div>
+        <p><strong>Apostila do professor</strong>Versão com orientações didáticas para quem ensina os alunos</p>
+      </div>
+      <div class="inclui-item">
+        <div class="ico">🎁</div>
+        <p><strong>Bônus 1 — Técnica</strong>Exercícios e atividades específicas para o instrumento escolhido</p>
+      </div>
+      <div class="inclui-item">
+        <div class="ico">🎶</div>
+        <p><strong>Bônus 2 — Repertório</strong>Partituras, músicas e materiais extras do instrumento</p>
+      </div>
+    </div>
   </section>
 
-  <h2 style="margin-top:40px">Perguntas frequentes</h2><p class="sub"></p>
-  <details><summary>Como recebo o material?</summary><p>Logo após a compra você recebe o acesso por e-mail e também no WhatsApp.</p></details>
-  <details><summary>Serve para iniciante?</summary><p>Sim. As aulas seguem uma ordem, do primeiro contato com o instrumento até os conteúdos mais avançados.</p></details>
-  <details><summary>Posso usar para dar aulas?</summary><p>Sim. Os materiais incluem a edição do professor, pensada para quem ensina.</p></details>
-  <details><summary>A compra é segura?</summary><p>O pagamento é feito na Cakto, plataforma de pagamentos que cuida do checkout e da entrega.</p></details>
+  <div class="faq">
+    <h2>Perguntas frequentes</h2><p class="section-sub" style="margin-bottom:16px"></p>
+    <details><summary>Como recebo o material?</summary><p>Logo após a compra você recebe o acesso por e-mail e também no WhatsApp.</p></details>
+    <details><summary>Serve para iniciante?</summary><p>Sim. As aulas seguem uma ordem, do primeiro contato com o instrumento até os conteúdos mais avançados.</p></details>
+    <details><summary>Posso usar para dar aulas?</summary><p>Sim. Os materiais incluem a apostila do professor, pensada para quem ensina.</p></details>
+    <details><summary>A compra é segura?</summary><p>O pagamento é feito na Cakto, plataforma de pagamentos que cuida do checkout e da entrega.</p></details>
+  </div>
 </main>
+
 <footer>Oficina Musical · Material novo toda semana no grupo do WhatsApp</footer>
-<div id="zoom"><button class="nav ant" aria-label="Anterior">‹</button><img alt=""><button class="nav prox" aria-label="Próxima">›</button></div>
+<div id="zoom"><img alt=""></div>
+
 <script>
-const PRODUTOS = [{"nome": "Piano", "aulas": "96 aulas", "link": "https://pay.cakto.com.br/b6mydmg", "imgs": ["piano-49.jpg", "piano-73.jpg", "piano-123.jpg", "piano-154.jpg", "piano-180.jpg", "piano-190.jpg", "piano-229.jpg", "piano-274.jpg", "piano-290.jpg", "piano-333.jpg"]}, {"nome": "Saxofone", "aulas": "72 aulas", "link": "https://pay.cakto.com.br/mcsp6ns", "imgs": ["saxofone-37.jpg", "saxofone-48.jpg", "saxofone-79.jpg", "saxofone-113.jpg", "saxofone-133.jpg", "saxofone-145.jpg", "saxofone-169.jpg", "saxofone-206.jpg", "saxofone-228.jpg", "saxofone-233.jpg"]}, {"nome": "Teclado", "aulas": "72 aulas", "link": "https://pay.cakto.com.br/d8q8sc6", "imgs": ["teclado-42.jpg", "teclado-53.jpg", "teclado-81.jpg", "teclado-105.jpg", "teclado-125.jpg", "teclado-155.jpg", "teclado-177.jpg", "teclado-206.jpg", "teclado-238.jpg", "teclado-244.jpg"]}, {"nome": "Canto", "aulas": "72 aulas", "link": "https://pay.cakto.com.br/rkockgs", "imgs": ["canto-27.jpg", "canto-52.jpg", "canto-88.jpg", "canto-110.jpg", "canto-126.jpg", "canto-150.jpg", "canto-189.jpg", "canto-199.jpg", "canto-228.jpg", "canto-248.jpg"]}, {"nome": "Violino", "aulas": "86 aulas", "link": "https://pay.cakto.com.br/yzgrazc", "imgs": ["violino-45.jpg", "violino-75.jpg", "violino-89.jpg", "violino-111.jpg", "violino-150.jpg", "violino-177.jpg", "violino-212.jpg", "violino-236.jpg", "violino-244.jpg", "violino-272.jpg"]}, {"nome": "Guitarra", "aulas": "80 aulas", "link": "https://pay.cakto.com.br/bebmsbv", "imgs": ["guitarra-9.jpg", "guitarra-10.jpg", "guitarra-14.jpg", "guitarra-19.jpg", "guitarra-23.jpg", "guitarra-25.jpg", "guitarra-29.jpg", "guitarra-33.jpg", "guitarra-36.jpg", "guitarra-39.jpg"]}, {"nome": "Violão", "aulas": "250 aulas", "link": "https://pay.cakto.com.br/vxt8yed", "imgs": ["violao-25.jpg", "violao-43.jpg", "violao-87.jpg", "violao-96.jpg", "violao-122.jpg", "violao-154.jpg", "violao-171.jpg", "violao-194.jpg", "violao-223.jpg", "violao-229.jpg"]}, {"nome": "Bateria", "aulas": "60 aulas", "link": "https://pay.cakto.com.br/m2vdsnu", "imgs": ["bateria-30.jpg", "bateria-50.jpg", "bateria-62.jpg", "bateria-85.jpg", "bateria-114.jpg", "bateria-125.jpg", "bateria-160.jpg", "bateria-176.jpg", "bateria-186.jpg", "bateria-212.jpg"]}, {"nome": "Cavaquinho", "aulas": "60 aulas", "link": "https://pay.cakto.com.br/a66kvam", "imgs": ["cavaquinho-43.jpg", "cavaquinho-55.jpg", "cavaquinho-86.jpg", "cavaquinho-95.jpg", "cavaquinho-117.jpg", "cavaquinho-138.jpg", "cavaquinho-172.jpg", "cavaquinho-192.jpg", "cavaquinho-226.jpg", "cavaquinho-229.jpg"]}, {"nome": "Flauta Doce", "aulas": "48 aulas", "link": "https://pay.cakto.com.br/ypkyyif", "imgs": ["flauta-doce-17.jpg", "flauta-doce-46.jpg", "flauta-doce-61.jpg", "flauta-doce-75.jpg", "flauta-doce-96.jpg", "flauta-doce-115.jpg", "flauta-doce-131.jpg", "flauta-doce-158.jpg", "flauta-doce-181.jpg", "flauta-doce-199.jpg"]}, {"nome": "Ukulele", "aulas": "48 aulas", "link": "https://pay.cakto.com.br/z64ckyb", "imgs": ["ukulele-27.jpg", "ukulele-52.jpg", "ukulele-62.jpg", "ukulele-89.jpg", "ukulele-98.jpg", "ukulele-126.jpg", "ukulele-134.jpg", "ukulele-168.jpg", "ukulele-184.jpg", "ukulele-194.jpg"]}, {"nome": "Musicalização Infantil", "aulas": "48 aulas", "link": "https://pay.cakto.com.br/yps4kqf", "imgs": []}, {"nome": "Viola Caipira", "aulas": "48 aulas", "link": "https://pay.cakto.com.br/3cvtp6f", "imgs": ["viola-caipira-27.jpg", "viola-caipira-49.jpg", "viola-caipira-63.jpg", "viola-caipira-77.jpg", "viola-caipira-113.jpg", "viola-caipira-117.jpg", "viola-caipira-150.jpg", "viola-caipira-167.jpg", "viola-caipira-188.jpg", "viola-caipira-197.jpg"]}, {"nome": "Gaita", "aulas": "30 aulas", "link": "https://pay.cakto.com.br/edvjpic", "imgs": ["gaita-13.jpg", "gaita-34.jpg", "gaita-40.jpg", "gaita-58.jpg", "gaita-64.jpg", "gaita-73.jpg", "gaita-94.jpg", "gaita-100.jpg", "gaita-118.jpg", "gaita-124.jpg"]}, {"nome": "Pandeiro", "aulas": "48 aulas", "link": "https://pay.cakto.com.br/3fexqmi", "imgs": ["pandeiro-17.jpg", "pandeiro-48.jpg", "pandeiro-57.jpg", "pandeiro-92.jpg", "pandeiro-95.jpg", "pandeiro-127.jpg", "pandeiro-144.jpg", "pandeiro-159.jpg", "pandeiro-186.jpg", "pandeiro-203.jpg"]}, {"nome": "Bandolim", "aulas": "36 aulas", "link": "https://pay.cakto.com.br/kj5yg7h", "imgs": ["bandolim-20.jpg", "bandolim-39.jpg", "bandolim-60.jpg", "bandolim-91.jpg", "bandolim-107.jpg", "bandolim-113.jpg", "bandolim-141.jpg", "bandolim-153.jpg", "bandolim-184.jpg", "bandolim-196.jpg"]}, {"nome": "Trompete", "aulas": "48 aulas", "link": "https://pay.cakto.com.br/puniu62", "imgs": ["trompete-26.jpg", "trompete-39.jpg", "trompete-60.jpg", "trompete-76.jpg", "trompete-94.jpg", "trompete-113.jpg", "trompete-144.jpg", "trompete-150.jpg", "trompete-181.jpg", "trompete-187.jpg"]}, {"nome": "Clarinete", "aulas": "36 aulas", "link": "https://pay.cakto.com.br/33t6c94", "imgs": ["clarinete-26.jpg", "clarinete-54.jpg", "clarinete-60.jpg", "clarinete-91.jpg", "clarinete-111.jpg", "clarinete-114.jpg", "clarinete-152.jpg", "clarinete-164.jpg", "clarinete-187.jpg", "clarinete-193.jpg"]}, {"nome": "Trombone", "aulas": "36 aulas", "link": "https://pay.cakto.com.br/phys3iw", "imgs": ["trombone-17.jpg", "trombone-54.jpg", "trombone-60.jpg", "trombone-91.jpg", "trombone-112.jpg", "trombone-115.jpg", "trombone-153.jpg", "trombone-165.jpg", "trombone-189.jpg", "trombone-195.jpg"]}, {"nome": "Berimbau", "aulas": "30 aulas", "link": "https://pay.cakto.com.br/qynb8tq", "imgs": ["berimbau-18.jpg", "berimbau-49.jpg", "berimbau-58.jpg", "berimbau-92.jpg", "berimbau-95.jpg", "berimbau-129.jpg", "berimbau-152.jpg", "berimbau-158.jpg", "berimbau-182.jpg", "berimbau-204.jpg"]}, {"nome": "Sanfona", "aulas": "72 aulas", "link": "https://pay.cakto.com.br/3bafqx3", "imgs": ["sanfona-57.jpg", "sanfona-86.jpg", "sanfona-95.jpg", "sanfona-122.jpg", "sanfona-179.jpg", "sanfona-185.jpg", "sanfona-232.jpg", "sanfona-258.jpg", "sanfona-280.jpg", "sanfona-322.jpg"]}];
-const chip = p => `<div class="chip"><div><b>${p.nome}</b><br><small>${p.aulas}</small></div><a class="btn" href="${p.link}" target="_blank" rel="noopener">Quero este</a></div>`;
-const t = document.getElementById("trilho");
-t.innerHTML = PRODUTOS.map(chip).join("") + PRODUTOS.map(chip).join("");
+const PRODUTOS = [
+  {"nome": "Violão", "aulas": "250 aulas", "link": "https://pay.cakto.com.br/ud9c2oq", "imgs": ["violao-25.jpg", "violao-43.jpg", "violao-87.jpg", "violao-96.jpg", "violao-122.jpg", "violao-154.jpg", "violao-171.jpg", "violao-194.jpg", "violao-223.jpg", "violao-229.jpg"]},
+  {"nome": "Guitarra", "aulas": "80 aulas", "link": "https://pay.cakto.com.br/qvi7dx7", "imgs": ["guitarra-9.jpg", "guitarra-10.jpg", "guitarra-14.jpg", "guitarra-19.jpg", "guitarra-23.jpg", "guitarra-25.jpg", "guitarra-29.jpg", "guitarra-33.jpg", "guitarra-36.jpg", "guitarra-39.jpg"]},
+  {"nome": "Piano", "aulas": "96 aulas", "link": "https://pay.cakto.com.br/nqt7tyc", "imgs": ["piano-49.jpg", "piano-73.jpg", "piano-123.jpg", "piano-154.jpg", "piano-180.jpg", "piano-190.jpg", "piano-229.jpg", "piano-274.jpg", "piano-290.jpg", "piano-333.jpg"]},
+  {"nome": "Canto", "aulas": "72 aulas", "link": "https://pay.cakto.com.br/qds4g97", "imgs": ["canto-27.jpg", "canto-52.jpg", "canto-88.jpg", "canto-110.jpg", "canto-126.jpg", "canto-150.jpg", "canto-189.jpg", "canto-199.jpg", "canto-228.jpg", "canto-248.jpg"]},
+  {"nome": "Bateria", "aulas": "60 aulas", "link": "https://pay.cakto.com.br/a4exuh9", "imgs": ["bateria-30.jpg", "bateria-50.jpg", "bateria-62.jpg", "bateria-85.jpg", "bateria-114.jpg", "bateria-125.jpg", "bateria-160.jpg", "bateria-176.jpg", "bateria-186.jpg", "bateria-212.jpg"]},
+  {"nome": "Teclado", "aulas": "72 aulas", "link": "https://pay.cakto.com.br/4rozncy", "imgs": ["teclado-42.jpg", "teclado-53.jpg", "teclado-81.jpg", "teclado-105.jpg", "teclado-125.jpg", "teclado-155.jpg", "teclado-177.jpg", "teclado-206.jpg", "teclado-238.jpg", "teclado-244.jpg"]},
+  {"nome": "Saxofone", "aulas": "72 aulas", "link": "https://pay.cakto.com.br/rbymf9e", "imgs": ["saxofone-37.jpg", "saxofone-48.jpg", "saxofone-79.jpg", "saxofone-113.jpg", "saxofone-133.jpg", "saxofone-145.jpg", "saxofone-169.jpg", "saxofone-206.jpg", "saxofone-228.jpg", "saxofone-233.jpg"]},
+  {"nome": "Flauta Doce", "aulas": "48 aulas", "link": "https://pay.cakto.com.br/e3s6w7m", "imgs": ["flauta-doce-17.jpg", "flauta-doce-46.jpg", "flauta-doce-61.jpg", "flauta-doce-75.jpg", "flauta-doce-96.jpg", "flauta-doce-115.jpg", "flauta-doce-131.jpg", "flauta-doce-158.jpg", "flauta-doce-181.jpg", "flauta-doce-199.jpg"]},
+  {"nome": "Violino", "aulas": "86 aulas", "link": "https://pay.cakto.com.br/yonaevw", "imgs": ["violino-45.jpg", "violino-75.jpg", "violino-89.jpg", "violino-111.jpg", "violino-150.jpg", "violino-177.jpg", "violino-212.jpg", "violino-236.jpg", "violino-244.jpg", "violino-272.jpg"]},
+  {"nome": "Ukulele", "aulas": "48 aulas", "link": "https://pay.cakto.com.br/3ygqtga", "imgs": ["ukulele-27.jpg", "ukulele-52.jpg", "ukulele-62.jpg", "ukulele-89.jpg", "ukulele-98.jpg", "ukulele-126.jpg", "ukulele-134.jpg", "ukulele-168.jpg", "ukulele-184.jpg", "ukulele-194.jpg"]},
+  {"nome": "Cavaquinho", "aulas": "60 aulas", "link": "https://pay.cakto.com.br/zajz4hw", "imgs": ["cavaquinho-43.jpg", "cavaquinho-55.jpg", "cavaquinho-86.jpg", "cavaquinho-95.jpg", "cavaquinho-117.jpg", "cavaquinho-138.jpg", "cavaquinho-172.jpg", "cavaquinho-192.jpg", "cavaquinho-226.jpg", "cavaquinho-229.jpg"]},
+  {"nome": "Pandeiro", "aulas": "48 aulas", "link": "https://pay.cakto.com.br/yjtoqdg", "imgs": ["pandeiro-17.jpg", "pandeiro-48.jpg", "pandeiro-57.jpg", "pandeiro-92.jpg", "pandeiro-95.jpg", "pandeiro-127.jpg", "pandeiro-144.jpg", "pandeiro-159.jpg", "pandeiro-186.jpg", "pandeiro-203.jpg"]},
+  {"nome": "Gaita", "aulas": "30 aulas", "link": "https://pay.cakto.com.br/ngfrqgo", "imgs": ["gaita-13.jpg", "gaita-34.jpg", "gaita-40.jpg", "gaita-58.jpg", "gaita-64.jpg", "gaita-73.jpg", "gaita-94.jpg", "gaita-100.jpg", "gaita-118.jpg", "gaita-124.jpg"]},
+  {"nome": "Sanfona", "aulas": "72 aulas", "link": "https://pay.cakto.com.br/6nq6o4q", "imgs": ["sanfona-57.jpg", "sanfona-86.jpg", "sanfona-95.jpg", "sanfona-122.jpg", "sanfona-179.jpg", "sanfona-185.jpg", "sanfona-232.jpg", "sanfona-258.jpg", "sanfona-280.jpg", "sanfona-322.jpg"]},
+  {"nome": "Viola Caipira", "aulas": "48 aulas", "link": "https://pay.cakto.com.br/b4kew7t", "imgs": ["viola-caipira-27.jpg", "viola-caipira-49.jpg", "viola-caipira-63.jpg", "viola-caipira-77.jpg", "viola-caipira-113.jpg", "viola-caipira-117.jpg", "viola-caipira-150.jpg", "viola-caipira-167.jpg", "viola-caipira-188.jpg", "viola-caipira-197.jpg"]},
+  {"nome": "Trompete", "aulas": "48 aulas", "link": "https://pay.cakto.com.br/3ad9r9x", "imgs": ["trompete-26.jpg", "trompete-39.jpg", "trompete-60.jpg", "trompete-76.jpg", "trompete-94.jpg", "trompete-113.jpg", "trompete-144.jpg", "trompete-150.jpg", "trompete-181.jpg", "trompete-187.jpg"]},
+  {"nome": "Clarinete", "aulas": "36 aulas", "link": "https://pay.cakto.com.br/36i8ryg", "imgs": ["clarinete-26.jpg", "clarinete-54.jpg", "clarinete-60.jpg", "clarinete-91.jpg", "clarinete-111.jpg", "clarinete-114.jpg", "clarinete-152.jpg", "clarinete-164.jpg", "clarinete-187.jpg", "clarinete-193.jpg"]},
+  {"nome": "Trombone", "aulas": "36 aulas", "link": "https://pay.cakto.com.br/4oepnyx", "imgs": ["trombone-17.jpg", "trombone-54.jpg", "trombone-60.jpg", "trombone-91.jpg", "trombone-112.jpg", "trombone-115.jpg", "trombone-153.jpg", "trombone-165.jpg", "trombone-189.jpg", "trombone-195.jpg"]},
+  {"nome": "Bandolim", "aulas": "36 aulas", "link": "https://pay.cakto.com.br/do82es8", "imgs": ["bandolim-20.jpg", "bandolim-39.jpg", "bandolim-60.jpg", "bandolim-91.jpg", "bandolim-107.jpg", "bandolim-113.jpg", "bandolim-141.jpg", "bandolim-153.jpg", "bandolim-184.jpg", "bandolim-196.jpg"]},
+  {"nome": "Berimbau", "aulas": "30 aulas", "link": "https://pay.cakto.com.br/7bv8t69", "imgs": ["berimbau-18.jpg", "berimbau-49.jpg", "berimbau-58.jpg", "berimbau-92.jpg", "berimbau-95.jpg", "berimbau-129.jpg", "berimbau-152.jpg", "berimbau-158.jpg", "berimbau-182.jpg", "berimbau-204.jpg"]},
+  {"nome": "Musicalização Infantil", "aulas": "48 aulas", "link": "https://pay.cakto.com.br/ogbpupp", "imgs": []}
+];
+
+// Carrossel
+function makeCarousel(imgs, nome) {
+  if (!imgs.length) return `<div class="sem">Prévia em breve</div>`;
+  const slides = imgs.map(i => `<img src="img/${i}" loading="lazy" alt="Prévia ${nome}">`).join('');
+  const dots = imgs.map((_,i) => `<span class="${i===0?'active':''}"></span>`).join('');
+  return `<div class="carousel">
+    <div class="carousel-track">${slides}</div>
+    ${imgs.length > 1 ? `<button class="carousel-btn prev" aria-label="Anterior">‹</button>
+    <button class="carousel-btn next" aria-label="Próximo">›</button>
+    <div class="carousel-dots">${dots}</div>` : ''}
+  </div>`;
+}
+
+// Faixa
+const chip = p => `<div class="chip"><div><b>${p.nome}</b><br><small>${p.aulas}</small></div><a class="btn-sm" href="${p.link}" target="_blank" rel="noopener">R$14,90</a></div>`;
+document.getElementById("trilho").innerHTML = PRODUTOS.map(chip).join("") + PRODUTOS.map(chip).join("");
+
+// Grade
 document.getElementById("grade").innerHTML = PRODUTOS.map(p => `
- <article class="card"><div><h3>${p.nome}</h3><div class="meta">${p.aulas} de conteúdo</div></div>
- ${p.imgs.length ? `<div class="thumbs">${p.imgs.map(i=>`<img src="img/${i}" loading="lazy" alt="Prévia da apostila de ${p.nome}">`).join("")}</div>` : `<div class="sem">Prévia em breve</div>`}
- <a class="btn" href="${p.link}" target="_blank" rel="noopener">Quero este</a></article>`).join("");
-const z = document.getElementById("zoom"), zi = z.querySelector("img");
-let lista = [], pos = 0;
-const mostra = () => { zi.src = lista[pos].src; };
-document.addEventListener("click", e => {
-  if (e.target.matches(".thumbs img")) { lista = [...e.target.parentElement.children]; pos = lista.indexOf(e.target); mostra(); z.style.display = "flex"; }
-  else if (e.target.matches(".ant")) { pos = (pos + lista.length - 1) % lista.length; mostra(); }
-  else if (e.target.matches(".prox")) { pos = (pos + 1) % lista.length; mostra(); }
-  else if (z.style.display === "flex") z.style.display = "none";
+<article class="card">
+  <div class="card-top">
+    <div><h3>${p.nome}</h3><div class="meta">${p.aulas} de conteúdo</div></div>
+    <span class="badge-bonus">+ 2 bônus</span>
+  </div>
+  ${makeCarousel(p.imgs, p.nome)}
+  <div class="preco-box">
+    <div class="preco-de"><s>R$49,90</s> por apenas</div>
+    <div class="preco-por">R$14,90 <span>no total</span></div>
+  </div>
+  <a class="btn-comprar" href="${p.link}" target="_blank" rel="noopener">Quero este material →</a>
+</article>`).join("");
+
+// Init carrosseis
+document.querySelectorAll('.carousel').forEach(car => {
+  const track = car.querySelector('.carousel-track');
+  const dots = car.querySelectorAll('.carousel-dots span');
+  const imgs = car.querySelectorAll('img');
+  let cur = 0;
+  const go = n => {
+    cur = (n + imgs.length) % imgs.length;
+    track.style.transform = `translateX(-${cur * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === cur));
+  };
+  car.querySelector('.prev')?.addEventListener('click', e => { e.stopPropagation(); go(cur - 1); });
+  car.querySelector('.next')?.addEventListener('click', e => { e.stopPropagation(); go(cur + 1); });
+  dots.forEach((d, i) => d.addEventListener('click', () => go(i)));
+});
+
+// Zoom
+const z = document.getElementById("zoom");
+document.addEventListener('click', e => {
+  if (e.target.matches('.carousel img')) { z.firstElementChild.src = e.target.src; z.style.display = 'flex'; }
+  else if (z.contains(e.target)) z.style.display = 'none';
 });
 </script>
 </body>
