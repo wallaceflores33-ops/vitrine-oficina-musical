@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Oficina Musical | Aulas completas para todos os instrumentos</title>
+<meta name="description" content="Apostilas e aulas completas de violão, piano, canto, bateria e mais 17 instrumentos. Veja uma prévia de cada material e escolha o seu.">
+<style>
+:root{--roxo:#3b1d8f;--roxo2:#7c3aed;--amar:#fbbf24;--fundo:#faf7f0;--texto:#1b1340;--mudo:#5b5675}
+*{box-sizing:border-box;margin:0}
+body{font-family:Segoe UI,system-ui,Arial,sans-serif;background:var(--fundo);color:var(--texto);line-height:1.5}
+.topo{background:linear-gradient(135deg,var(--roxo),var(--roxo2));color:#fff;text-align:center;padding:48px 20px 32px}
+.topo .logo{font-weight:800;letter-spacing:.5px;opacity:.95}
+.topo h1{font-size:clamp(28px,5vw,46px);line-height:1.15;margin:14px auto 10px;max-width:760px}
+.topo p{max-width:620px;margin:0 auto;opacity:.92;font-size:18px}
+.btn{display:inline-block;background:var(--amar);color:#1b1340;font-weight:700;text-decoration:none;border-radius:999px;padding:11px 22px;font-size:15px;border:0;cursor:pointer;white-space:nowrap}
+.btn:hover{filter:brightness(1.05)}
+.btn.sec{background:#fff;color:var(--roxo)}
+.topo .btn{margin-top:22px;font-size:17px;padding:14px 28px}
+/* carrossel */
+.faixa{background:#2a1470;padding:14px 0;overflow:hidden;position:relative}
+.trilho{display:flex;gap:12px;width:max-content;animation:rola 60s linear infinite}
+.faixa:hover .trilho{animation-play-state:paused}
+@keyframes rola{to{transform:translateX(-50%)}}
+.chip{display:flex;align-items:center;gap:10px;background:#fff;border-radius:999px;padding:6px 6px 6px 16px;box-shadow:0 2px 8px #0003}
+.chip b{font-size:15px}.chip small{color:var(--mudo);font-size:12px}
+.chip .btn{padding:7px 14px;font-size:13px}
+@media (prefers-reduced-motion:reduce){.trilho{animation:none;overflow-x:auto;width:auto}}
+main{max-width:1060px;margin:0 auto;padding:40px 16px}
+h2{font-size:28px;margin-bottom:6px}
+.sub{color:var(--mudo);margin-bottom:24px}
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.card{background:#fff;border-radius:16px;padding:16px;box-shadow:0 2px 12px #1b134014;display:flex;flex-direction:column;gap:12px}
+.card h3{font-size:20px}.card .meta{color:var(--mudo);font-size:14px}
+.thumbs{display:flex;gap:8px}
+.thumbs img{width:calc(33.3% - 6px);border-radius:6px;border:1px solid #e6e1f3;cursor:zoom-in;background:#fff}
+.sem{background:#f1ecfb;border-radius:10px;padding:18px;text-align:center;color:var(--mudo);font-size:14px}
+.card .btn{text-align:center;margin-top:auto}
+.inclui{background:#fff;border-radius:16px;padding:22px;margin-top:36px;box-shadow:0 2px 12px #1b134014}
+.inclui ul{list-style:none;padding:0;margin-top:10px;display:grid;gap:6px}
+details{background:#fff;border-radius:12px;padding:14px 16px;margin-bottom:8px}
+summary{cursor:pointer;font-weight:600}
+details p{margin-top:8px;color:var(--mudo)}
+footer{text-align:center;color:var(--mudo);font-size:13px;padding:30px 16px 50px}
+#zoom{position:fixed;inset:0;background:#000c;display:none;align-items:center;justify-content:center;z-index:9;padding:16px}
+#zoom img{max-height:92vh;max-width:92vw;border-radius:8px;background:#fff}
+</style>
+</head>
+<body>
+<header class="topo">
+  <div class="logo">🎵 OFICINA MUSICAL</div>
+  <h1>Aulas e apostilas completas para o seu instrumento</h1>
+  <p>Escolha o instrumento, veja uma prévia do material e compre direto, com acesso na hora.</p>
+  <a class="btn" href="#materiais">Ver todos os materiais</a>
+</header>
+
+<div class="faixa" aria-label="Instrumentos disponíveis"><div class="trilho" id="trilho"></div></div>
+
+<main id="materiais">
+  <h2>Veja um pouco de cada material</h2>
+  <p class="sub">Clique nas páginas para ampliar. Cada material tem apostila do aluno e aulas organizadas por módulo.</p>
+  <div class="grade" id="grade"></div>
+
+  <section class="inclui">
+    <h2 style="font-size:22px">O que vem em cada material</h2>
+    <ul>
+      <li>📘 Apostila do aluno, com as aulas em sequência e página de progresso</li>
+      <li>🎓 Aulas completas para estudar sozinho ou ensinar</li>
+      <li>🎁 Bônus e extras, conforme o instrumento</li>
+      <li>⚡ Acesso liberado logo após a compra</li>
+    </ul>
+  </section>
+
+  <h2 style="margin-top:40px">Perguntas frequentes</h2><p class="sub"></p>
+  <details><summary>Como recebo o material?</summary><p>Logo após a compra você recebe o acesso por e-mail e também no WhatsApp.</p></details>
+  <details><summary>Serve para iniciante?</summary><p>Sim. As aulas seguem uma ordem, do primeiro contato com o instrumento até os conteúdos mais avançados.</p></details>
+  <details><summary>Posso usar para dar aulas?</summary><p>Sim. Os materiais incluem a edição do professor, pensada para quem ensina.</p></details>
+  <details><summary>A compra é segura?</summary><p>O pagamento é feito na Cakto, plataforma de pagamentos que cuida do checkout e da entrega.</p></details>
+</main>
+<footer>Oficina Musical · Material novo toda semana no grupo do WhatsApp</footer>
+<div id="zoom"><img alt=""></div>
+<script>
+const PRODUTOS = [{"nome": "Piano", "aulas": "96 aulas", "link": "https://pay.cakto.com.br/b6mydmg", "imgs": ["piano-0.png", "piano-6.png", "piano-12.png"]}, {"nome": "Saxofone", "aulas": "72 aulas", "link": "https://pay.cakto.com.br/mcsp6ns", "imgs": ["saxofone-0.png", "saxofone-6.png", "saxofone-12.png"]}, {"nome": "Teclado", "aulas": "72 aulas", "link": "https://pay.cakto.com.br/d8q8sc6", "imgs": ["teclado-0.png", "teclado-6.png", "teclado-12.png"]}, {"nome": "Canto", "aulas": "72 aulas", "link": "https://pay.cakto.com.br/rkockgs", "imgs": ["canto-0.png", "canto-6.png", "canto-12.png"]}, {"nome": "Violino", "aulas": "86 aulas", "link": "https://pay.cakto.com.br/yzgrazc", "imgs": ["violino-0.png", "violino-6.png", "violino-12.png"]}, {"nome": "Guitarra", "aulas": "80 aulas", "link": "https://pay.cakto.com.br/bebmsbv", "imgs": ["guitarra-0.png", "guitarra-6.png", "guitarra-12.png"]}, {"nome": "Violão", "aulas": "250 aulas", "link": "https://pay.cakto.com.br/vxt8yed", "imgs": ["violao-0.png", "violao-6.png", "violao-12.png"]}, {"nome": "Bateria", "aulas": "60 aulas", "link": "https://pay.cakto.com.br/m2vdsnu", "imgs": ["bateria-0.png", "bateria-6.png", "bateria-12.png"]}, {"nome": "Cavaquinho", "aulas": "60 aulas", "link": "https://pay.cakto.com.br/a66kvam", "imgs": ["cavaquinho-0.png", "cavaquinho-6.png", "cavaquinho-12.png"]}, {"nome": "Flauta Doce", "aulas": "48 aulas", "link": "https://pay.cakto.com.br/ypkyyif", "imgs": ["flauta-doce-0.png", "flauta-doce-6.png", "flauta-doce-12.png"]}, {"nome": "Ukulele", "aulas": "48 aulas", "link": "https://pay.cakto.com.br/z64ckyb", "imgs": ["ukulele-0.png", "ukulele-6.png", "ukulele-12.png"]}, {"nome": "Musicalização Infantil", "aulas": "48 aulas", "link": "https://pay.cakto.com.br/yps4kqf", "imgs": []}, {"nome": "Viola Caipira", "aulas": "48 aulas", "link": "https://pay.cakto.com.br/3cvtp6f", "imgs": ["viola-caipira-0.png", "viola-caipira-6.png", "viola-caipira-12.png"]}, {"nome": "Gaita", "aulas": "30 aulas", "link": "https://pay.cakto.com.br/edvjpic", "imgs": ["gaita-0.png", "gaita-6.png", "gaita-12.png"]}, {"nome": "Pandeiro", "aulas": "48 aulas", "link": "https://pay.cakto.com.br/3fexqmi", "imgs": ["pandeiro-0.png", "pandeiro-6.png", "pandeiro-12.png"]}, {"nome": "Bandolim", "aulas": "36 aulas", "link": "https://pay.cakto.com.br/kj5yg7h", "imgs": ["bandolim-0.png", "bandolim-6.png", "bandolim-12.png"]}, {"nome": "Trompete", "aulas": "48 aulas", "link": "https://pay.cakto.com.br/puniu62", "imgs": ["trompete-0.png", "trompete-6.png", "trompete-12.png"]}, {"nome": "Clarinete", "aulas": "36 aulas", "link": "https://pay.cakto.com.br/33t6c94", "imgs": ["clarinete-0.png", "clarinete-6.png", "clarinete-12.png"]}, {"nome": "Trombone", "aulas": "36 aulas", "link": "https://pay.cakto.com.br/phys3iw", "imgs": ["trombone-0.png", "trombone-6.png", "trombone-12.png"]}, {"nome": "Berimbau", "aulas": "30 aulas", "link": "https://pay.cakto.com.br/qynb8tq", "imgs": ["berimbau-0.png", "berimbau-6.png", "berimbau-12.png"]}, {"nome": "Sanfona", "aulas": "72 aulas", "link": "https://pay.cakto.com.br/3bafqx3", "imgs": ["sanfona-0.png", "sanfona-6.png", "sanfona-12.png"]}];
+const chip = p => `<div class="chip"><div><b>${p.nome}</b><br><small>${p.aulas}</small></div><a class="btn" href="${p.link}" target="_blank" rel="noopener">Quero este</a></div>`;
+const t = document.getElementById("trilho");
+t.innerHTML = PRODUTOS.map(chip).join("") + PRODUTOS.map(chip).join("");
+document.getElementById("grade").innerHTML = PRODUTOS.map(p => `
+ <article class="card"><div><h3>${p.nome}</h3><div class="meta">${p.aulas} de conteúdo</div></div>
+ ${p.imgs.length ? `<div class="thumbs">${p.imgs.map(i=>`<img src="img/${i}" loading="lazy" alt="Prévia da apostila de ${p.nome}">`).join("")}</div>` : `<div class="sem">Prévia em breve</div>`}
+ <a class="btn" href="${p.link}" target="_blank" rel="noopener">Quero este</a></article>`).join("");
+const z = document.getElementById("zoom");
+document.addEventListener("click", e => {
+  if (e.target.matches(".thumbs img")) { z.firstElementChild.src = e.target.src; z.style.display = "flex"; }
+  else if (z.contains(e.target)) z.style.display = "none";
+});
+</script>
+</body>
+</html>
