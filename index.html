@@ -9,36 +9,55 @@
 :root{--roxo:#3b1d8f;--roxo2:#7c3aed;--amar:#fbbf24;--fundo:#faf7f0;--texto:#1b1340;--mudo:#5b5675;--verde:#059669}
 *{box-sizing:border-box;margin:0}
 body{font-family:Segoe UI,system-ui,Arial,sans-serif;background:var(--fundo);color:var(--texto);line-height:1.5}
+
+/* TOPO */
 .topo{background:linear-gradient(135deg,#2a0d6e,var(--roxo),var(--roxo2));color:#fff;text-align:center;padding:56px 20px 44px;position:relative;overflow:hidden}
 .topo::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
 .topo .logo{font-weight:800;letter-spacing:.5px;opacity:.9;font-size:14px;text-transform:uppercase;margin-bottom:16px}
 .topo h1{font-size:clamp(28px,5vw,50px);line-height:1.1;margin:0 auto 14px;max-width:760px;font-weight:800}
 .topo p{max-width:580px;margin:0 auto 8px;opacity:.9;font-size:18px}
 .destaque-preco{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:8px 20px;margin:18px auto 0;font-size:16px}
-.destaque-preco s{opacity:.7}
-.destaque-preco strong{color:var(--amar);font-size:22px}
+.destaque-preco s{opacity:.7}.destaque-preco strong{color:var(--amar);font-size:22px}
 .btn-hero{display:inline-block;background:var(--amar);color:#1b1340;font-weight:800;text-decoration:none;border-radius:999px;padding:16px 36px;font-size:18px;margin-top:28px;border:0;cursor:pointer;transition:.15s;box-shadow:0 4px 20px rgba(251,191,36,.4)}
 .btn-hero:hover{filter:brightness(1.07);transform:translateY(-1px)}
-.faixa{background:#2a1470;padding:14px 0;overflow:hidden;position:relative}
+
+/* FAIXA */
+.faixa{background:#2a1470;padding:14px 0;overflow:hidden}
 .trilho{display:flex;gap:12px;width:max-content;animation:rola 60s linear infinite}
 .faixa:hover .trilho{animation-play-state:paused}
 @keyframes rola{to{transform:translateX(-50%)}}
 .chip{display:flex;align-items:center;gap:10px;background:#fff;border-radius:999px;padding:6px 6px 6px 16px;box-shadow:0 2px 8px #0003}
 .chip b{font-size:15px}.chip small{color:var(--mudo);font-size:12px}
 .chip .btn-sm{padding:7px 14px;font-size:13px;background:var(--amar);color:#1b1340;font-weight:700;text-decoration:none;border-radius:999px;white-space:nowrap}
+
+/* MAIN */
 main{max-width:1100px;margin:0 auto;padding:48px 16px}
 .section-title{font-size:30px;font-weight:800;margin-bottom:6px}
 .section-sub{color:var(--mudo);margin-bottom:28px;font-size:16px}
-.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:20px}
-.card{background:#fff;border-radius:18px;padding:18px;box-shadow:0 2px 16px #1b134014;display:flex;flex-direction:column;gap:12px;transition:.2s;border:2px solid transparent}
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
+
+/* CARD */
+.card{background:#fff;border-radius:18px;padding:20px;box-shadow:0 2px 16px #1b134014;display:flex;flex-direction:column;gap:14px;transition:.2s;border:2px solid transparent}
 .card:hover{border-color:var(--roxo2);box-shadow:0 6px 24px #7c3aed22}
 .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
 .card h3{font-size:20px;font-weight:800;line-height:1.2}
 .card .meta{color:var(--mudo);font-size:13px;margin-top:2px}
 .badge-bonus{background:#f0fdf4;color:var(--verde);border:1px solid #bbf7d0;border-radius:999px;padding:3px 10px;font-size:12px;font-weight:600;white-space:nowrap}
-.thumbs{display:flex;gap:8px}
-.thumbs img{width:calc(33.3% - 6px);border-radius:8px;border:1px solid #e6e1f3;cursor:zoom-in;background:#f5f3ff;aspect-ratio:3/4;object-fit:cover}
-.sem{background:#f1ecfb;border-radius:10px;padding:18px;text-align:center;color:var(--mudo);font-size:14px}
+
+/* CARROSSEL */
+.carousel{position:relative;border-radius:12px;overflow:hidden;background:#f1ecfb;aspect-ratio:3/4;user-select:none}
+.carousel-track{display:flex;height:100%;transition:transform .3s ease}
+.carousel-track img{flex:0 0 100%;width:100%;height:100%;object-fit:contain;background:#f5f3ff;cursor:zoom-in}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(59,29,143,.75);color:#fff;border:none;border-radius:50%;width:34px;height:34px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2;transition:.15s;line-height:1}
+.carousel-btn:hover{background:var(--roxo2)}
+.carousel-btn.prev{left:8px}
+.carousel-btn.next{right:8px}
+.carousel-dots{position:absolute;bottom:8px;left:0;right:0;display:flex;justify-content:center;gap:5px}
+.carousel-dots span{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer;transition:.2s}
+.carousel-dots span.active{background:#fff;width:16px;border-radius:4px}
+.sem{background:#f1ecfb;border-radius:12px;padding:28px 18px;text-align:center;color:var(--mudo);font-size:14px;aspect-ratio:3/4;display:flex;align-items:center;justify-content:center}
+
+/* PREÇO / BOTÃO */
 .preco-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border-radius:12px;padding:12px 16px;text-align:center}
 .preco-de{color:var(--mudo);font-size:13px}
 .preco-de s{font-size:16px}
@@ -46,6 +65,8 @@ main{max-width:1100px;margin:0 auto;padding:48px 16px}
 .preco-por span{font-size:14px;font-weight:600;color:var(--mudo)}
 .btn-comprar{display:block;background:var(--amar);color:#1b1340;font-weight:800;text-decoration:none;border-radius:999px;padding:14px 24px;font-size:16px;text-align:center;margin-top:auto;transition:.15s}
 .btn-comprar:hover{filter:brightness(1.07)}
+
+/* INCLUI */
 .inclui{background:#fff;border-radius:20px;padding:28px 32px;margin-top:40px;box-shadow:0 2px 16px #1b134014}
 .inclui h2{font-size:22px;font-weight:800;margin-bottom:16px;color:var(--roxo)}
 .inclui-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
@@ -53,6 +74,8 @@ main{max-width:1100px;margin:0 auto;padding:48px 16px}
 .inclui-item .ico{font-size:26px;flex-shrink:0;line-height:1}
 .inclui-item p{font-size:14px;color:var(--texto);font-weight:500;line-height:1.4}
 .inclui-item p strong{display:block;font-size:15px;margin-bottom:3px;color:var(--roxo)}
+
+/* FAQ */
 .faq{margin-top:40px}
 .faq h2{font-size:24px;font-weight:800;margin-bottom:4px}
 details{background:#fff;border-radius:12px;padding:16px 20px;margin-bottom:10px;box-shadow:0 1px 6px #1b134010}
@@ -60,10 +83,14 @@ summary{cursor:pointer;font-weight:700;font-size:15px;list-style:none;display:fl
 summary::after{content:"▾";font-size:18px;color:var(--roxo2);transition:.2s}
 details[open] summary::after{transform:rotate(180deg)}
 details p{margin-top:10px;color:var(--mudo);font-size:14px;line-height:1.6}
+
 footer{text-align:center;color:var(--mudo);font-size:13px;padding:36px 16px 56px}
+
+/* ZOOM */
 #zoom{position:fixed;inset:0;background:#000c;display:none;align-items:center;justify-content:center;z-index:9;padding:16px}
 #zoom img{max-height:92vh;max-width:92vw;border-radius:8px;background:#fff}
-@media(max-width:600px){.inclui{padding:20px 16px}.inclui-grid{grid-template-columns:1fr}}
+
+@media(max-width:600px){.inclui{padding:20px 16px}.inclui-grid{grid-template-columns:1fr}.carousel-btn{width:28px;height:28px;font-size:14px}}
 </style>
 </head>
 <body>
@@ -84,7 +111,7 @@ footer{text-align:center;color:var(--mudo);font-size:13px;padding:36px 16px 56px
 
 <main id="materiais">
   <h2 class="section-title">Veja um pouco de cada material</h2>
-  <p class="section-sub">Clique nas páginas para ampliar. Cada material tem apostila do aluno e aulas organizadas por módulo.</p>
+  <p class="section-sub">Passe pelas páginas do material antes de comprar. Acesso imediato após a compra.</p>
   <div class="grade" id="grade"></div>
 
   <section class="inclui">
@@ -146,17 +173,31 @@ const PRODUTOS = [
   {"nome":"Musicalização Infantil","aulas":"48 aulas","link":"https://pay.cakto.com.br/ogbpupp","imgs":[]}
 ];
 
-const chip = p => `<div class="chip"><div><b>${p.nome}</b><br><small>${p.aulas}</small></div><a class="btn-sm" href="${p.link}" target="_blank" rel="noopener">R$14,90</a></div>`;
-const t = document.getElementById("trilho");
-t.innerHTML = PRODUTOS.map(chip).join("") + PRODUTOS.map(chip).join("");
+// Carrossel
+function makeCarousel(imgs, nome) {
+  if (!imgs.length) return `<div class="sem">Prévia em breve</div>`;
+  const slides = imgs.map(i => `<img src="img/${i}" loading="lazy" alt="Prévia ${nome}">`).join('');
+  const dots = imgs.map((_,i) => `<span class="${i===0?'active':''}"></span>`).join('');
+  return `<div class="carousel">
+    <div class="carousel-track">${slides}</div>
+    ${imgs.length > 1 ? `<button class="carousel-btn prev" aria-label="Anterior">‹</button>
+    <button class="carousel-btn next" aria-label="Próximo">›</button>
+    <div class="carousel-dots">${dots}</div>` : ''}
+  </div>`;
+}
 
+// Faixa
+const chip = p => `<div class="chip"><div><b>${p.nome}</b><br><small>${p.aulas}</small></div><a class="btn-sm" href="${p.link}" target="_blank" rel="noopener">R$14,90</a></div>`;
+document.getElementById("trilho").innerHTML = PRODUTOS.map(chip).join("") + PRODUTOS.map(chip).join("");
+
+// Grade
 document.getElementById("grade").innerHTML = PRODUTOS.map(p => `
 <article class="card">
   <div class="card-top">
     <div><h3>${p.nome}</h3><div class="meta">${p.aulas} de conteúdo</div></div>
     <span class="badge-bonus">+ 2 bônus</span>
   </div>
-  ${p.imgs.length ? `<div class="thumbs">${p.imgs.map(i=>`<img src="img/${i}" loading="lazy" alt="Prévia ${p.nome}">`).join("")}</div>` : `<div class="sem">Prévia em breve</div>`}
+  ${makeCarousel(p.imgs, p.nome)}
   <div class="preco-box">
     <div class="preco-de"><s>R$49,90</s> por apenas</div>
     <div class="preco-por">R$14,90 <span>no total</span></div>
@@ -164,10 +205,27 @@ document.getElementById("grade").innerHTML = PRODUTOS.map(p => `
   <a class="btn-comprar" href="${p.link}" target="_blank" rel="noopener">Quero este material →</a>
 </article>`).join("");
 
+// Init carrosseis
+document.querySelectorAll('.carousel').forEach(car => {
+  const track = car.querySelector('.carousel-track');
+  const dots = car.querySelectorAll('.carousel-dots span');
+  const imgs = car.querySelectorAll('img');
+  let cur = 0;
+  const go = n => {
+    cur = (n + imgs.length) % imgs.length;
+    track.style.transform = `translateX(-${cur * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === cur));
+  };
+  car.querySelector('.prev')?.addEventListener('click', e => { e.stopPropagation(); go(cur - 1); });
+  car.querySelector('.next')?.addEventListener('click', e => { e.stopPropagation(); go(cur + 1); });
+  dots.forEach((d, i) => d.addEventListener('click', () => go(i)));
+});
+
+// Zoom
 const z = document.getElementById("zoom");
-document.addEventListener("click", e => {
-  if (e.target.matches(".thumbs img")) { z.firstElementChild.src = e.target.src; z.style.display = "flex"; }
-  else if (z.contains(e.target)) z.style.display = "none";
+document.addEventListener('click', e => {
+  if (e.target.matches('.carousel img')) { z.firstElementChild.src = e.target.src; z.style.display = 'flex'; }
+  else if (z.contains(e.target)) z.style.display = 'none';
 });
 </script>
 </body>
